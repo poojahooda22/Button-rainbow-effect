@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+:root {
+    --color-main: #a969e9;
+    --color-main-second: #5fdefb;
+    --color-main-third: #e9d78e;
+}
+
+* {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0; 
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 300px;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    width: 400px;
+    
+
+}
+
+.btn {
+    display: inline-block;
+    position: relative;
+
+    border: none;
+    border-radius: 10rem;
+    cursor: pointer;
+    overflow: hidden;
+    background-color: transparent;
+}
+
+.btn:hover .btn__bg {
+    transform: scale(0.94);
+
+}
+.btn:hover .btn__text-out {
+    transition: transform 1s cubic-bezier(.32, .99, .49, .99), opacity .4s;
+    transform: translateY(-2rem);
+    opacity: 0;
+}
+.btn:hover .btn__text-in {
+    transition: 1s all cubic-bezier(.32, .99, .49, .99);
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.btn:hover .btn__bg__layer-first,
+.btn:hover .btn__bg__layer-second,
+.btn:hover .btn__bg__layer-third {
+    transition: .6s all cubic-bezier(.2, .67, .51, .91);
+    transform: translateY(1rem);
+}
+
+.btn:hover .btn__bg__layer-first {
+    transition-delay: .2s;
+}
+
+.btn:hover .btn__bg__layer-second {
+    transition-delay: .3s;
+}
+
+.btn:hover .btn__bg__layer-third {
+    transition-delay: .4s;
+}
+
+.btn__text-out,
+.btn__text-in {
+    position: absolute;
+    display: inline-block;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    width: 80%;
+    font-weight: 700;
+    font-size: 1.7rem;
+    z-index: 5;
+    font-family: Poppins, sans-serif;
+}
+
+ .btn__text-in {
+    opacity: 0;
+    transform: translateY(2rem);
+}
+
+.btn__bg {
+    height: 6rem;
+    width: 16.5rem;
+    transition: 1s all cubic-bezier(.26, .81, .21, .98);
+    background-color: var(--color-main-third);
+    border-radius: 100px;
+    overflow: hidden;
+}
+
+.btn__bg__layer {
+    position: absolute;
+    display: block;
+    bottom: 0;
+    left: 50%;
+    translate: -50%;
+    border-radius: 100% 100% 0 0;
+    border: none;
+    width: 120%;
+    height: 200%;
+    z-index: 1;
+    transform: translateY(12rem);
+}
+
+ .btn__bg__layer-first {
+    background-color: var(--color-main);
+    
+}
+
+ .btn__bg__layer-second {
+    background-color: var(--color-main-second);
+    
+}
+
+ .btn__bg__layer-third {
+    background-color: var(--color-main-third);
+    
+}
